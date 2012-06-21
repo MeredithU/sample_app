@@ -108,6 +108,12 @@ describe User do
 		end	
 	end
 
+	describe "email address with mixed case" do
+		@user.email = mixed_case_email
+		@user.save
+		@user.reload.email.should == mixed_case_email.downcase
+	end
+
 	end
 
 end
