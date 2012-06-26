@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.6'
-gem 'pg', '0.12.2'
 gem 'bootstrap-sass', '2.0.0'
 gem 'bcrypt-ruby', '3.0.1'
 
@@ -9,6 +8,7 @@ gem 'bcrypt-ruby', '3.0.1'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development, :test do 
+	gem 'sqlite3', '1.3.5' 
 	gem 'rspec-rails', '2.10.0'
 	gem 'annotate', '~> 2.4.1.beta'
 end
@@ -33,9 +33,10 @@ group :test do
 	gem 'factory_girl_rails', '1.4.0'
 end
 
-#group :production do
-#	gem 'pg', '0.12.2'
-#end
+group :production do
+	gem 'pg', '0.12.2'
+	gem 'thin'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
